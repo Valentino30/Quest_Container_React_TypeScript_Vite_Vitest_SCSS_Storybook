@@ -1,7 +1,8 @@
 import './App.css'
+import QuestsContainer from "./containers/Quests";
 
 function App() {
-  return <div></div>;
+  return <QuestsContainer />;
 }
 
 export default App
