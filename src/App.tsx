@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import QuestsContainer from "./containers/Quests";
 
 function App() {

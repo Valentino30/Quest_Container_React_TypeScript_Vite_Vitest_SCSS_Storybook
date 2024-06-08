@@ -1,5 +1,7 @@
 export type Quest = {
   id: string;
+  title?: string;
+  description?: string;
   user_id: string;
   type: string;
   status: string;
