@@ -1,0 +1,20 @@
+.quests {
+  width: 900px;
+  height: 500px;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid #DAE5E4;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  
+  &__title {
+    padding: 24px;
+  }
+  
+  &__list {
+    height: 70%;
+    overflow-y: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+

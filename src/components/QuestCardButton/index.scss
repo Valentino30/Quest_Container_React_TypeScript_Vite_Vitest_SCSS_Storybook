@@ -1,0 +1,30 @@
+.quest {
+    &__button {
+        border: none;
+        width: 180px;
+        padding: 6px;
+        color: white;
+        cursor: pointer;
+        border-radius: 8px;
+        background-color: #004850;
+        transition: background-color 0.3s, transform 0.2s;
+      
+        &:hover {
+          background-color: #005B66;
+          transform: scale(1.05);
+        }
+      
+        &:active {
+          background-color: #007280;
+          transform: scale(0.95);
+        }
+      
+        &:focus {
+          outline: none;
+        }
+      
+        &__icon {
+          margin-left: 10px;
+        }
+    }
+}

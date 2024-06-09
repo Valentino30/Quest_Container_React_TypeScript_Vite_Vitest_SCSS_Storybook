@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 import { Quest } from "../../types/quest";
-import Quests from "../../components/Quests";
 import { fetchMockQuests } from "../../api/quest";
+import QuestList from "../../components/QuestList";
 
-const QuestsContainer: React.FC = () => {
+export default function QuestsContainer() {
   const [quests, setQuests] = useState<Quest[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -36,7 +36,5 @@ const QuestsContainer: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
-  return <Quests quests={quests} />;
-};
-
-export default QuestsContainer;
+  return <QuestList quests={quests} />;
+}
