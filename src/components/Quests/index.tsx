@@ -26,10 +26,10 @@ const Quests: React.FC<QuestsProps> = ({ quests }) => {
               />
             </div>
             <div className="quest__details">
-              <h3 className="quest__title">
+              <h3 className="quest__details__title">
                 {quest.title || getTitleByQuestType(quest.type)}
               </h3>
-              <p className="quest__description">
+              <p className="quest__details__description">
                 {quest.description || SAMPLE_QUEST_DESCRIPTION}
               </p>
             </div>

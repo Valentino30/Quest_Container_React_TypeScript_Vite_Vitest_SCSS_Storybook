@@ -8,8 +8,6 @@
     
     &__title {
       padding: 24px;
-      color: #293232;
-      text-align: left;
     }
     
     &__list {
@@ -36,7 +34,7 @@
   }
 
   &__icon {
-    width: 65px;
+    width: 100px;
     margin-right: 16px;
 
     img {
@@ -48,30 +46,24 @@
   }
 
   &__details {
-    flex-grow: 1;
-    text-align: left;
-
+    margin: 16px;
     &__title {
-      font-size: 16px;
-      color: #141D1D;
-    }
-
+      margin: 0px;
+      }
+      
     &__description {
       margin: 0px;
-      font-size: 14px;
-      color: #141D1D;
+
     }
   }
+
   &__button {
     border: none;
     width: 180px;
     padding: 6px;
     color: white;
     cursor: pointer;
-    font-size: 16px;
     border-radius: 8px;
-    display: inline-block;
-    text-decoration: none;
     background-color: #004850;
     transition: background-color 0.3s, transform 0.2s;
   
