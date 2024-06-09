@@ -1,91 +1,14 @@
-import {
-  ADD,
-  SAVE,
-  SEND,
-  SUBMIT,
-  INSTALL,
-  RESOLVE,
-  SCHEDULE,
-  ADD_CONTACT,
-  SAMPLE_TITLE,
-  SAMPLE_ACTION,
-  ADD_NEW_CONTACT,
-  RESOLVE_COMMENT,
-  SEND_FIRST_EMAIL,
-  ADD_CONTACT_TYPE,
-  INSTALL_EXTENSION,
-  SUBMIT_APPLICATION,
-  SAVE_FIRST_COMPANY,
-  SCHEDULE_COFEE_CHAT,
-  SEND_FOLLOW_UP_EMAIL,
-  RESOLVE_COMMENT_TYPE,
-  ADD_NEW_CONTACT_TYPE,
-  SEND_LINKEDIN_MESSAGE,
-  SEND_FIRST_EMAIL_TYPE,
-  INSTALL_EXTENSION_TYPE,
-  SUBMIT_APPLICATION_TYPE,
-  SAVE_FIRST_COMPANY_TYPE,
-  SEND_LINKEDIN_CONNECTION,
-  SCHEDULE_COFEE_CHAT_TYPE,
-  SEND_FOLLOW_UP_EMAIL_TYPE,
-  SEND_LINKEDIN_MESSAGE_TYPE,
-  SEND_LINKEDIN_CONNECTION_TYPE,
-} from "../constants";
-
-export const getTitleByQuestType = (questType: string) => {
-  switch (questType) {
-    case INSTALL_EXTENSION_TYPE:
-      return INSTALL_EXTENSION;
-    case SUBMIT_APPLICATION_TYPE:
-      return SUBMIT_APPLICATION;
-    case RESOLVE_COMMENT_TYPE:
-      return RESOLVE_COMMENT;
-    case SAVE_FIRST_COMPANY_TYPE:
-      return SAVE_FIRST_COMPANY;
-    case ADD_CONTACT_TYPE:
-      return ADD_CONTACT;
-    case ADD_NEW_CONTACT_TYPE:
-      return ADD_NEW_CONTACT;
-    case SEND_LINKEDIN_MESSAGE_TYPE:
-      return SEND_LINKEDIN_MESSAGE;
-    case SEND_LINKEDIN_CONNECTION_TYPE:
-      return SEND_LINKEDIN_CONNECTION;
-    case SEND_FIRST_EMAIL_TYPE:
-      return SEND_FIRST_EMAIL;
-    case SCHEDULE_COFEE_CHAT_TYPE:
-      return SCHEDULE_COFEE_CHAT;
-    case SEND_FOLLOW_UP_EMAIL_TYPE:
-      return SEND_FOLLOW_UP_EMAIL;
-    default:
-      return SAMPLE_TITLE;
-  }
+export const getTitleByQuestType = (questType: string): string => {
+  // Replace underscores or hyphens with spaces
+  let result = questType.replace(/[_-]/g, " ");
+  // Capitalize the first letter of each word
+  result = result.replace(/\b\w/g, (char) => char.toUpperCase());
+  return result;
 };
 
-export const getButtonByQuestType = (questType: string) => {
-  switch (questType) {
-    case INSTALL_EXTENSION_TYPE:
-      return INSTALL;
-    case SUBMIT_APPLICATION_TYPE:
-      return SUBMIT;
-    case RESOLVE_COMMENT_TYPE:
-      return RESOLVE;
-    case SAVE_FIRST_COMPANY_TYPE:
-      return SAVE;
-    case ADD_CONTACT_TYPE:
-      return ADD;
-    case ADD_NEW_CONTACT_TYPE:
-      return ADD;
-    case SEND_LINKEDIN_MESSAGE_TYPE:
-      return SEND;
-    case SEND_LINKEDIN_CONNECTION_TYPE:
-      return SEND;
-    case SEND_FIRST_EMAIL_TYPE:
-      return SEND;
-    case SCHEDULE_COFEE_CHAT_TYPE:
-      return SCHEDULE;
-    case SEND_FOLLOW_UP_EMAIL_TYPE:
-      return SEND;
-    default:
-      return SAMPLE_ACTION;
-  }
+export const getButtonByQuestType = (questType: string): string => {
+  // Split the string at underscores or hyphens
+  const words = questType.split(/[_-]/);
+  // Capitalize the first word
+  return words[0].charAt(0).toUpperCase() + words[0].slice(1);
 };

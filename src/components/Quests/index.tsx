@@ -3,7 +3,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons/faAr
 
 import "./index.scss";
 import { Quest } from "../../types/quest";
-import { SAMPLE_QUEST_DESCRIPTION } from "../../constants";
+import { SAMPLE_QUEST_DESCRIPTION } from "../../constants/quest";
 import { getButtonByQuestType, getTitleByQuestType } from "../../utils";
 import companyLogoPlaceholder from "../../assets/placeholders/company_logo.png";
 
