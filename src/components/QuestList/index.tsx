@@ -1,5 +1,5 @@
 import "./index.scss";
-import QuestCard from "../QuestCard";
+import QuestCard from "./QuestCard";
 import { Quest } from "../../types/quest";
 
 interface QuestListProps {

@@ -1,7 +1,11 @@
 import "./index.scss";
-import { Quest } from "../../types/quest";
-import { SAMPLE_QUEST_DESCRIPTION } from "../../constants/quest";
-import { getButtonByQuestType, getImageByQuest, getTitleByQuestType } from "../../utils";
+import {
+  getImageByQuest,
+  getTitleByQuestType,
+  getButtonByQuestType,
+} from "../../../utils/quest";
+import { Quest } from "../../../types/quest";
+import { SAMPLE_QUEST_DESCRIPTION } from "../../../constants/quest";
 
 interface QuestCardProps {
   quest: Quest;

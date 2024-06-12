@@ -1,6 +1,3 @@
-import { ReactNode } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import {
   faMugHot,
   faMessage,
@@ -8,13 +5,15 @@ import {
   faDownload,
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
+import { ReactNode } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Quest } from "../types/quest";
-import QuestCardIcon from "../components/QuestCardIcon";
-import QuestCardLink from "../components/QuestCardLink";
-import QuestCardImage from "../components/QuestCardImage";
-import QuestCardButton from "../components/QuestCardButton";
 import logoPlaceholder from "../assets/placeholders/logo.png";
+import QuestLink from "../components/QuestList/QuestCard/QuestLink";
+import QuestIcon from "../components/QuestList/QuestCard/QuestIcon";
 import headshotPlaceholder from "../assets/placeholders/headshot.png";
+import QuestImage from "../components/QuestList/QuestCard/QuestImage";
+import QuestButton from "../components/QuestList/QuestCard/QuestButton";
 
 export const getTitleByQuestType = (questType: string): string => {
   // Replace underscores or hyphens with spaces
@@ -34,16 +33,24 @@ export const getButtonNameByQuestType = (questType: string): string => {
 export const getImageByQuest = (quest: Quest): ReactNode => {
   switch (quest.type) {
     case "install_extension":
-      return <QuestCardIcon icon={<FontAwesomeIcon size="xl" icon={faDownload} />} />;
+      return (
+        <QuestIcon icon={<FontAwesomeIcon size="xl" icon={faDownload} />} />
+      );
     case "submit_application":
-      return <QuestCardIcon icon={<FontAwesomeIcon size="xl" icon={faPaperPlane} />} />;
+      return (
+        <QuestIcon icon={<FontAwesomeIcon size="xl" icon={faPaperPlane} />} />
+      );
     case "resolve-comment":
-      return <QuestCardIcon icon={<FontAwesomeIcon size="xl" icon={faMessage} />} />;
+      return (
+        <QuestIcon icon={<FontAwesomeIcon size="xl" icon={faMessage} />} />
+      );
     case "save_first_company":
-      return <QuestCardIcon icon={<FontAwesomeIcon size="xl" icon={faBookmark} />} />;
+      return (
+        <QuestIcon icon={<FontAwesomeIcon size="xl" icon={faBookmark} />} />
+      );
     case "add_contact":
       return (
-        <QuestCardImage
+        <QuestImage
           image={quest.company?.logo_url}
           placeholder={logoPlaceholder}
         />
@@ -53,24 +60,24 @@ export const getImageByQuest = (quest: Quest): ReactNode => {
     case "send_linkedin_message":
     case "send_linkedin_connection":
       return (
-        <QuestCardImage
+        <QuestImage
           image={quest.contact?.profile_image}
           placeholder={headshotPlaceholder}
         />
       );
     case "schedule_coffee_chat":
-      return <QuestCardIcon icon={<FontAwesomeIcon size="xl" icon={faMugHot} />} />;
+      return <QuestIcon icon={<FontAwesomeIcon size="xl" icon={faMugHot} />} />;
     default:
-      return <QuestCardImage placeholder={logoPlaceholder} />;
+      return <QuestImage placeholder={logoPlaceholder} />;
   }
 };
 
 export const getButtonByQuestType = (questType: string): ReactNode => {
   switch (questType) {
     case "install_extension":
-      return <QuestCardButton questType={questType} />;
+      return <QuestButton questType={questType} />;
     default:
-      return <QuestCardLink />;
+      return <QuestLink />;
   }
 };
 

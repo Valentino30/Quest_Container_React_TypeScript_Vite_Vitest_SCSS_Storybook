@@ -1,13 +1,14 @@
 import "./index.scss";
-import { getButtonNameByQuestType } from "../../utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
-type QuestCardButtonProps = {
+import { getButtonNameByQuestType } from "../../../../utils/quest";
+
+type QuestButtonProps = {
   questType: string;
 };
 
-export default function QuestCardButton({ questType }: QuestCardButtonProps) {
+export default function QuestButton({ questType }: QuestButtonProps) {
   return (
     <button className="quest__button">
       {getButtonNameByQuestType(questType)}

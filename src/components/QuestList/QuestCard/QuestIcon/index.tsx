@@ -1,12 +1,12 @@
 import "./index.scss";
 import { ReactNode } from "react";
-import { getRandomPastelColor } from "../../utils";
+import { getRandomPastelColor } from "../../../../utils/quest";
 
-type QuestCardIconProps = {
+type QuestIconProps = {
   icon: ReactNode;
 };
 
-export default function QuestCardIcon({ icon }: QuestCardIconProps) {
+export default function QuestIcon({ icon }: QuestIconProps) {
   return (
     <div
       className="quest__icon"
